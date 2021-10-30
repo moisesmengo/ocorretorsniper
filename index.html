@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Corretor Sniper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Descubra as estratégias Sniper's que eu uso para gerar leads extremamente qualificados e prontos para assinar o contrato."
+    />
+    <meta
+      name="keywords"
+      content="estratégias, corretor, venda de imóveis, faturamento, leads, sniper"
+    />
+
+    <style>
+      header {
+        padding: 16px 0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header img {
+        height: 50px;
+      }
+      .hero {
+        height: auto;
+        padding-top: 60px;
+      }
+      .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: -1;
+        width: 100%;
+      }
+      .bg img {
+        opacity: 0.1;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .content_aula {
+        display: grid;
+        padding: 15px;
+        grid-template-columns: 790px 1fr;
+        grid-gap: 18px;
+      }
+      .video {
+        height: 450px;
+        border: 10px #ff9000 solid;
+        border-radius: 15px;
+      }
+      .video iframe {
+        height: 100%;
+        border-radius: 14px;
+      }
+      .content_aula {
+        background: rgba(0, 0, 0, 0.3);
+        animation: show 0.5s forwards;
+      }
+      @keyframes show {
+        from {
+          opacity: 0;
+          transform: translate3d(-50px, 0, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .numero_aula {
+        font-size: 20px;
+        color: #ff9000;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .proximas_aulas {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        margin-top: 50px;
+      }
+      .aula {
+        position: relative;
+      }
+      .aula img {
+        border: 4px solid #ff9000;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        height: auto;
+      }
+      .aula h2 {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .aula h2 strong {
+        color: #ff9000;
+      }
+      .status {
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      .aula.indisponivel {
+        position: relative;
+      }
+      .aula.indisponivel h2 {
+        opacity: 0.5;
+      }
+      .aula.indisponivel::before {
+        content: url(assets/img/dashicons_lock.svg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 156px;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 100;
+      }
+      .aula .data_liberacao {
+        display: none;
+      }
+      .aula.indisponivel .data_liberacao {
+        display: block;
+      }
+      .data_liberacao {
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 20px;
+        z-index: 100;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <a href="#" class="logo">
+        <img src="assets/img/logo.svg" alt="O corretor sniper" class="img" />
+      </a>
+    </header>
+    <!-- background -->
+    <div class="bg">
+      <img src="assets/img/bg.webp" alt="plano de fundo" class="img" />
+    </div>
+    <!-- capa -->
+    <section class="hero" id="app">
+      <div class="container">
+        <div class="content_aula" v-for="aula in aulas" v-if="aula.principal">
+          <div class="video">
+            <iframe
+              width="1280"
+              height="720"
+              :src="aula.url"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="infos">
+            <span class="numero_aula">Vídeo {{aula.numero}}:</span>
+            <h1>{{aula.titulo}}</h1>
+            <p>{{aula.desc}}</p>
+          </div>
+        </div>
+
+        <div class="proximas_aulas">
+          <div class="aula" v-for="aula in aulas" :class="aula.status">
+            <img
+              :src="aula.thumb"
+              alt="próxima aula"
+              class="img"
+              v-on:click="mudarStatus(aula)"
+            />
+
+            <span class="data_liberacao">{{aula.data_liberacao}}</span>
+
+            <h2><strong>Vídeo {{aula.numero}}:</strong> {{aula.titulo}}</h2>
+            <span class="status">({{aula.status}})</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <span
+          ><a href="">TERMS |</a> <a href="">PRIVACY |</a>
+          <a href="">LEGAL</a></span
+        >
+        <p>Todos os direitos reservados</p>
+        <img src="assets/img/logo.svg" alt="O corretor sniper" />
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
