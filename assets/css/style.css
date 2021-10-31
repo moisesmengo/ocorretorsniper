@@ -74,7 +74,7 @@ footer p {
 }
 @media (max-width: 550px) {
   header img {
-    height: 40px;
+    height: 50px;
   }
   .hero .container {
     width: 100%;
