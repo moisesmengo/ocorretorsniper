@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <head>
       <meta charset="UTF-8" />
@@ -27,6 +27,30 @@
       />
 
       <style>
+        .capa_vagas {
+          height: auto !important;
+          padding: 60px 0;
+        }
+        .acabaram {
+          display: flex;
+          align-items: center;
+          margin-top: 32px;
+          font-weight: bold;
+        }
+        .acabaram svg {
+          margin-left: 20px;
+        }
+        .atencao span {
+          font-size: 42px !important;
+          font-weight: bold;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          letter-spacing: 1px;
+          margin-left: 42px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.487);
+        }
+        .primeiro_a_saber {
+          margin-top: 22px;
+        }
         html {
           overflow-x: hidden;
         }
@@ -54,7 +78,6 @@
           justify-content: center;
           padding: 20px;
         }
-
         .atencao span {
           font-size: 70px;
           font-weight: bold;
@@ -143,23 +166,31 @@
             height: 80px;
           }
         }
+        @media (max-width: 900px) {
+          .atencao span {
+            margin-left: 0;
+            font-size: 16px !important;
+            text-align: center;
+          }
+          .atencao svg {
+            width: 30px;
+            height: 30px;
+          }
+          .atencao {
+            padding: 10px;
+            max-width: 300px;
+            flex-direction: column;
+          }
+          .primeiro_a_saber {
+            text-align: center;
+          }
+        }
         @media (max-width: 550px) {
           .capa {
             height: auto !important;
             padding: 40px 0;
           }
-          .atencao span {
-            margin-left: 10px;
-            font-size: 24px;
-          }
-          .atencao svg {
-            width: 24px;
-            height: 24px;
-          }
-          .atencao {
-            padding: 10px;
-            max-width: 300px;
-          }
+
           .progresso {
             max-width: 300px;
             margin-top: 20px;
@@ -180,7 +211,7 @@
     </head>
   </head>
   <body>
-    <section class="capa">
+    <section class="capa capa_vagas">
       <div class="bg">
         <svg
           width="100vw"
@@ -348,49 +379,55 @@
         <div class="atencao">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="131"
-            height="113"
+            width="92"
+            height="92"
             fill="none"
-            viewBox="0 0 131 113"
+            viewBox="0 0 92 92"
           >
             <path
-              fill="#FF9000"
-              d="M71.454 71.368H59.546V41.632h11.908v29.736zm0 23.79H59.546V83.263h11.908v11.895zM0 113h131L65.5 0 0 113z"
+              fill="#FF9A16"
+              d="M82.8 46H92v27.6h-9.2V46zm0 36.8H92V92h-9.2v-9.2zM46 0C20.7 0 0 20.7 0 46s20.7 46 46 46c10.58 0 19.78-3.68 27.6-9.2v-46h17.48C86.94 15.64 68.08 0 46 0zm19.32 65.32L41.4 50.6V23h6.9v23.92L69 59.34l-3.68 5.98z"
             />
           </svg>
-          <span>ATENÇÃO</span>
-        </div>
 
-        <div class="progresso">
-          <strong class="total_prog">83%</strong>
-          <span></span>
+          <span>Oooops ... Parece que você chegou tarde. </span>
         </div>
 
         <h1 id="titulo_obg">
-          Toque no botão abaixo e entre no meu GRUPO VIP exclusivos para receber
-          todos os materiais complementares e informações referente ao evento.
+          Parece que as vagas disponíveis para as sessões de estratégia do
+          método Sniper ...
         </h1>
 
-        <a class="btn_grupo" href="#"> QUERO ENTRAR NO GRUPO VIP </a>
-
-        <div class="grupo-fechado">
+        <h2 class="acabaram">
+          JÁ ACABARAM
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
+            width="35"
+            height="35"
             fill="none"
-            viewBox="0 0 28 28"
+            viewBox="0 0 35 35"
           >
             <path
               fill="#fff"
-              fill-rule="evenodd"
-              d="M15.167 5.487c0-2.167-2.695-3.163-4.106-1.518L6.813 8.925a1.167 1.167 0 01-.886.408h-.094a3.5 3.5 0 00-3.5 3.5v2.334a3.5 3.5 0 003.5 3.5h.094a1.168 1.168 0 01.886.408l.831-.714-.832.713 4.25 4.958c1.41 1.645 4.105.648 4.105-1.519V5.487zm3.842 5.355a1.167 1.167 0 011.65 0l1.508 1.508 1.508-1.508a1.168 1.168 0 111.65 1.65L23.816 14l1.509 1.508a1.167 1.167 0 01-1.65 1.65l-1.508-1.508-1.509 1.508a1.166 1.166 0 01-1.65-1.65L20.518 14l-1.508-1.508a1.167 1.167 0 010-1.65z"
-              clip-rule="evenodd"
+              d="M5.495 27.247c0-1.872 2.065-5.372 4.253-8.33C11.934 21.876 14 25.376 14 27.248A4.253 4.253 0 019.748 31.5a4.257 4.257 0 01-4.253-4.253zM35 17.5A17.5 17.5 0 0117.5 35c-1.61 0-3.185-.245-4.672-.648a7.742 7.742 0 004.672-7.104c0-.788-.192-1.698-.543-2.748h.543c2.188 0 4.06.875 4.848 2.152l2.485-2.485C23.258 22.26 20.563 21 17.5 21c-.718 0-1.418.07-2.082.21a44.08 44.08 0 00-2.835-4.358l-.84-1.102C12.985 15.523 14 14.402 14 13.125c0-1.4-1.225-2.625-2.625-2.625S8.75 11.725 8.75 13.125c0 .332.07.648.193.945L6.93 16.852c-2.73 3.71-4.305 6.773-4.777 9.066A17.54 17.54 0 010 17.5a17.5 17.5 0 1135 0zm-8.75-4.375c0-1.4-1.225-2.625-2.625-2.625S21 11.725 21 13.125s1.225 2.625 2.625 2.625 2.625-1.225 2.625-2.625z"
             />
           </svg>
+        </h2>
 
-          <h2>Grupo Fechado e Silencioso</h2>
-        </div>
+        <p class="primeiro_a_saber">
+          Para ser notificado, assim que houver novas vagas, forneça seus dados
+          abaixo e você será o primeiro a saber!
+        </p>
+
+        <form>
+          <input type="text" placeholder="Digite seu nome" />
+          <input type="email" placeholder="Digite seu e-mail" />
+          <input type="tel" placeholder="Digite seu whatsapp" />
+
+          <button type="submit" class="btn_grupo">
+            SIM! ME AVISE ASSIM QUE TIVER VAGAS DISPONÍVEIS
+          </button>
+        </form>
       </div>
     </section>
 

@@ -66,6 +66,8 @@ body {
   margin-top: 40px;
   transition: 0.5s;
   max-height: 80px;
+  border: none;
+  cursor: pointer;
 }
 .btn_grupo:hover {
   filter: brightness(90%);
@@ -74,6 +76,33 @@ body {
 /* infos */
 .bgd {
   display: none;
+}
+
+.btn_grupo {
+  font-size: 28px;
+}
+.capa_vagas form {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+}
+.capa_vagas form input {
+  height: 46px;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #ff9000;
+  margin-bottom: 20px;
+  padding: 12px;
+  outline: none;
+  color: #0f0a06;
+}
+.capa_vagas form .btn_grupo {
+  margin-top: 0;
+  font-size: 16px !important;
+  padding: 10px;
+}
+footer {
+  margin-top: 40px !important;
 }
 
 @media (min-width: 550px) {
@@ -171,7 +200,12 @@ body {
   footer .container {
     padding: 40px 0 !important;
   }
-  .btn_grupo {
-    font-size: 28px;
+
+  .capa_vagas form {
+    width: 750px !important;
+  }
+  .capa_vagas form .btn_grupo {
+    font-size: 22px !important;
+    height: 80px;
   }
 }
